@@ -1,0 +1,5 @@
+bleak>=0.21
+pillow>=9.2
+numpy
+spidev>=3.5
+gpiod

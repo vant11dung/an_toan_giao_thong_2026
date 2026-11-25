@@ -1,0 +1,26 @@
+# Tự chạy helmet_monitor.py khi Orange Pi khởi động (= khi mở chìa).
+#
+# Cài:  sudo cp helmet-monitor.service /etc/systemd/system/
+#       sudo systemctl daemon-reload
+#       sudo systemctl enable --now helmet-monitor
+# Xem log:  journalctl -u helmet-monitor -f
+#
+# Sửa WorkingDirectory nếu repo nằm chỗ khác.
+# Chạy bằng root vì cần quyền dùng GPIO (/dev/gpiochip*) và SPI (/dev/spidev*).
+
+[Unit]
+Description=ATGT canh bao cai quai mu bao hiem
+After=bluetooth.target
+Wants=bluetooth.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/orangepi/an_toan_giao_thong_2026/helmet/pi
+ExecStart=/usr/bin/python3 helmet_monitor.py
+Restart=always
+RestartSec=2
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
