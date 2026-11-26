@@ -195,7 +195,7 @@ Thư mục `helmet/pi/`:
 | 24/11 | Tạo `ble_test/` để thử lưỡi gà + BLE với điện thoại | Vẫn còn, chỉ để thử |
 | 24/11 | Minh yêu cầu **ngủ sâu** cho đỡ tốn pin → viết lại kế hoạch | Ngủ sâu thì tắt hẳn Bluetooth, không giữ kết nối được → đổi sang **phát quảng bá** |
 | 25/11 | Viết firmware mới (ngủ sâu + quảng bá) và toàn bộ code Pi (còi, màn ST7789) | Commit `376073b` trên nhánh `mu-bao-hiem-quang-ba` |
-| sau 25/11 | Thêm `TEST_MODE` vào firmware | **Chưa commit** |
+| 26/11 | Thêm `TEST_MODE` vào firmware, viết file này | Commit `9254d40` |
 
 ---
 
@@ -210,7 +210,7 @@ Thư mục `helmet/pi/`:
 | Pi: màn ST7789 | ✅ Có | ❌ Chưa đấu |
 | Tự chạy khi mở chìa | ✅ Có | ❌ |
 
-Code **chỉ nằm trên laptop**: nhánh `mu-bao-hiem-quang-ba`, **chưa push** lên GitHub.
+Code đã commit trên laptop, nhánh `mu-bao-hiem-quang-ba`, nhưng **chưa push** lên GitHub.
 
 ---
 
