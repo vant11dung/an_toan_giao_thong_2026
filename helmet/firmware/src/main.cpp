@@ -57,6 +57,13 @@ void setup() {
     if (esp_sleep_get_wakeup_cause() == ESP_SLEEP_WAKEUP_UNDEFINED) delay(2000);
 #endif
 
+#if TEST_MODE
+    // Chế độ thử: không chạy phần ngủ bên dưới, nhảy thẳng sang loop()
+    Serial.println("=== CHE DO THU: khong ngu, phat BLE lien tuc ===");
+    buckle_begin();
+    return;
+#endif
+
     // 1. Đọc quai
     buckle_begin();
     bool buckled = buckle_read_stable();
@@ -95,5 +102,13 @@ void setup() {
 }
 
 void loop() {
-    // Không bao giờ chạy tới đây: setup() luôn kết thúc bằng ngủ sâu.
+#if TEST_MODE
+    // Chế độ thử: mỗi ~0.5 giây đọc quai, phát BLE, in ra Serial
+    bool buckled = buckle_read_stable();
+    Serial.printf("[thu] quai: %s, seq=%u\n", buckled ? "DA CAI" : "CHUA CAI", seq);
+    beacon_send(buckled, read_battery_percent(), seq);
+    seq++;
+    delay(200);
+#endif
+    // Khi TEST_MODE = 0 thì không bao giờ chạy tới đây: setup() luôn kết thúc bằng ngủ sâu.
 }

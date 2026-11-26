@@ -39,3 +39,8 @@
 // ---------- Gỡ lỗi ----------
 // 1 = in Serial để xem trên laptop. Khi chạy bằng pin thật thì đặt 0 cho đỡ tốn.
 #define DEBUG_SERIAL 1
+
+// 1 = CHẾ ĐỘ THỬ: không ngủ, phát BLE liên tục, in Serial mỗi giây.
+//     Dùng để kiểm tra bằng điện thoại (nRF Connect) và Serial monitor.
+// 0 = chạy thật: ngủ sâu, tiết kiệm pin. NHỚ đổi về 0 trước khi lắp lên mũ.
+#define TEST_MODE 1
