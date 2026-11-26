@@ -210,7 +210,8 @@ Thư mục `helmet/pi/`:
 | Pi: màn ST7789 | ✅ Có | ❌ Chưa đấu |
 | Tự chạy khi mở chìa | ✅ Có | ❌ |
 
-Code đã commit trên laptop, nhánh `mu-bao-hiem-quang-ba`, nhưng **chưa push** lên GitHub.
+Code đã push lên GitHub, nhánh `mu-bao-hiem-quang-ba` (chưa gộp vào `main`).
+Lấy về Pi: `git clone -b mu-bao-hiem-quang-ba https://github.com/vant11dung/an_toan_giao_thong_2026.git`
 
 ---
 
